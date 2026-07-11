@@ -1,132 +1,171 @@
-// ==========================
-// SARUFLIX V2
-// ==========================
+// ================================
+// SARUFLIX v2.0
+// Part 1
+// ================================
 
-document.addEventListener("DOMContentLoaded", () => {
+const intro = document.getElementById("intro");
+const ticketSection = document.getElementById("ticketSection");
+const profileSection = document.getElementById("profileSection");
+const home = document.getElementById("home");
 
-    const intro = document.getElementById("intro");
-    const ticket = document.getElementById("ticketSection");
-    const profile = document.getElementById("profileSection");
-    const home = document.getElementById("home");
+const photosPage = document.getElementById("photosPage");
+const videosPage = document.getElementById("videosPage");
+const letterPage = document.getElementById("letterPage");
 
-    const profileCard = document.querySelector(".profileCard");
-    const playBtn = document.getElementById("playBtn");
-    const letterBtn = document.getElementById("letterBtn");
-    const navLogo = document.querySelector(".navLogo");
+const enterProfile = document.getElementById("enterProfile");
 
-    const song = new Audio("music/song.mp3");
-    song.loop = true;
+const navHome = document.getElementById("navHome");
+const navPhotos = document.getElementById("navPhotos");
+const navVideos = document.getElementById("navVideos");
+const navLetter = document.getElementById("navLetter");
 
-    // ==========================
-    // Intro → Ticket
-    // ==========================
+const photosCard = document.getElementById("photosCard");
+const videosCard = document.getElementById("videosCard");
+const letterCard = document.getElementById("letterCard");
+
+const playBtn = document.getElementById("playBtn");
+const watchNow = document.getElementById("watchNow");
+const letterBtn = document.getElementById("letterBtn");
+
+const backFromPhotos = document.getElementById("backFromPhotos");
+const backFromVideos = document.getElementById("backFromVideos");
+const backFromLetter = document.getElementById("backFromLetter");
+
+// -------------------------------
+// Intro Animation
+// -------------------------------
+
+setTimeout(() => {
+    intro.classList.add("hidden");
+    ticketSection.classList.remove("hidden");
 
     setTimeout(() => {
+        ticketSection.classList.add("hidden");
+        profileSection.classList.remove("hidden");
+    }, 2500);
 
-        intro.classList.add("hidden");
-        ticket.classList.remove("hidden");
+}, 2500);
 
-    },4000);
+// -------------------------------
+// Profile Selection
+// -------------------------------
 
-    // ==========================
-    // Ticket → Profile
-    // ==========================
+enterProfile.addEventListener("click", () => {
 
-    setTimeout(() => {
-
-        ticket.classList.add("hidden");
-        profile.classList.remove("hidden");
-
-    },8000);
-
-    // ==========================
-    // Enter Website
-    // ==========================
-
-    profileCard.addEventListener("click",()=>{
-
-        profile.classList.add("hidden");
-        home.classList.remove("hidden");
-
-        home.classList.add("fade");
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
-    });
-
-    // ==========================
-    // Play Memories
-    // ==========================
-
-    playBtn.addEventListener("click",()=>{
-
-        song.play();
-
-        alert("🎬 Memories Gallery is coming in the next update ❤️");
-
-    });
-
-    // ==========================
-    // Letter
-    // ==========================
-
-const letterModal = document.getElementById("letterModal");
-const closeLetter = document.getElementById("closeLetter");
-
-letterBtn.addEventListener("click",()=>{
-
-    letterModal.classList.remove("hidden");
+    profileSection.classList.add("hidden");
+    home.classList.remove("hidden");
 
 });
 
-closeLetter.addEventListener("click",()=>{
+// -------------------------------
+// Helper Functions
+// -------------------------------
 
-    letterModal.classList.add("hidden");
+function hideAllPages() {
 
+    home.classList.add("hidden");
+    photosPage.classList.add("hidden");
+    videosPage.classList.add("hidden");
+    letterPage.classList.add("hidden");
+
+}
+
+function openHome() {
+
+    hideAllPages();
+    home.classList.remove("hidden");
+
+}
+
+function openPhotos() {
+
+    hideAllPages();
+    photosPage.classList.remove("hidden");
+
+}
+
+function openVideos() {
+
+    hideAllPages();
+    videosPage.classList.remove("hidden");
+
+}
+
+function openLetter() {
+
+    hideAllPages();
+    letterPage.classList.remove("hidden");
+
+}
+// ================================
+// Part 2
+// Navigation & Buttons
+// ================================
+
+// Navbar
+
+navHome.addEventListener("click", (e) => {
+    e.preventDefault();
+    openHome();
 });
-    // ==========================
-    // Secret Logo
-    // ==========================
 
-    let clicks = 0;
-    let timer;
-
-    navLogo.addEventListener("click",()=>{
-
-        clicks++;
-
-        clearTimeout(timer);
-
-        timer = setTimeout(()=>{
-
-            clicks=0;
-
-        },2500);
-
-        if(clicks>=5){
-
-            clicks=0;
-
-            alert("❤️ Secret Unlocked!\n\nWelcome to the hidden page.");
-
-        }
-
-    });
-
+navPhotos.addEventListener("click", (e) => {
+    e.preventDefault();
+    openPhotos();
 });
-// ==========================
-// PHOTO GALLERY
-// ==========================
 
-const galleryImages = document.querySelectorAll(".galleryImage");
-const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightboxImage");
-const closeLightbox = document.getElementById("closeLightbox");
+navVideos.addEventListener("click", (e) => {
+    e.preventDefault();
+    openVideos();
+});
 
-galleryImages.forEach((img) => {
+navLetter.addEventListener("click", (e) => {
+    e.preventDefault();
+    openLetter();
+});
+
+// Continue Watching Cards
+
+photosCard.addEventListener("click", openPhotos);
+
+videosCard.addEventListener("click", openVideos);
+
+letterCard.addEventListener("click", openLetter);
+
+// Hero Buttons
+
+playBtn.addEventListener("click", openPhotos);
+
+watchNow.addEventListener("click", openVideos);
+
+letterBtn.addEventListener("click", openLetter);
+
+// Back Buttons
+
+backFromPhotos.addEventListener("click", openHome);
+
+backFromVideos.addEventListener("click", openHome);
+
+backFromLetter.addEventListener("click", openHome);
+// ================================
+// Part 3
+// Auto Photo & Video Gallery
+// ================================
+
+const photoGallery = document.getElementById("photoGallery");
+const videoGallery = document.getElementById("videoGallery");
+
+// ---------- Photos ----------
+
+for (let i = 1; i <= 11; i++) {
+
+    const img = document.createElement("img");
+
+    img.src = `images/photo${i}.jpg`;
+
+    img.className = "galleryImage";
+
+    img.alt = `Photo ${i}`;
 
     img.addEventListener("click", () => {
 
@@ -136,7 +175,39 @@ galleryImages.forEach((img) => {
 
     });
 
-});
+    photoGallery.appendChild(img);
+
+}
+
+// ---------- Videos ----------
+
+for (let i = 1; i <= 17; i++) {
+
+    const video = document.createElement("video");
+
+    video.controls = true;
+
+    video.className = "memoryVideo";
+
+    video.poster = `images/photo${Math.min(i,11)}.jpg`;
+
+    video.innerHTML = `
+        <source src="videos/video${i}.mp4" type="video/mp4">
+        Your browser does not support videos.
+    `;
+
+    videoGallery.appendChild(video);
+
+}
+// ================================
+// Lightbox
+// ================================
+
+const lightbox = document.getElementById("lightbox");
+
+const lightboxImage = document.getElementById("lightboxImage");
+
+const closeLightbox = document.getElementById("closeLightbox");
 
 closeLightbox.addEventListener("click", () => {
 
@@ -153,3 +224,95 @@ lightbox.addEventListener("click", (e) => {
     }
 
 });
+// ================================
+// Part 4
+// Smooth Scrolling & Active Navigation
+// ================================
+
+// Highlight active navigation item
+function setActiveNav(activeId) {
+
+    document.querySelectorAll("nav a").forEach(link => {
+        link.classList.remove("active");
+    });
+
+    const active = document.getElementById(activeId);
+
+    if (active) {
+        active.classList.add("active");
+    }
+
+}
+
+// Update active nav when opening pages
+
+function openHome() {
+
+    hideAllPages();
+    home.classList.remove("hidden");
+    setActiveNav("navHome");
+
+}
+
+function openPhotos() {
+
+    hideAllPages();
+    photosPage.classList.remove("hidden");
+    setActiveNav("navPhotos");
+
+}
+
+function openVideos() {
+
+    hideAllPages();
+    videosPage.classList.remove("hidden");
+    setActiveNav("navVideos");
+
+}
+
+function openLetter() {
+
+    hideAllPages();
+    letterPage.classList.remove("hidden");
+    setActiveNav("navLetter");
+
+}
+
+// Set Home as active initially
+setActiveNav("navHome");
+// ================================
+// Part 5
+// Welcome Message & Finish
+// ================================
+
+console.log("❤️ Welcome to SARUFLIX ❤️");
+
+// Pause all videos when leaving the Videos page
+function pauseAllVideos() {
+
+    document.querySelectorAll("#videoGallery video").forEach(video => {
+
+        video.pause();
+
+    });
+
+}
+
+// Override page switches to stop playback
+const originalOpenHome = openHome;
+openHome = function () {
+    pauseAllVideos();
+    originalOpenHome();
+};
+
+const originalOpenPhotos = openPhotos;
+openPhotos = function () {
+    pauseAllVideos();
+    originalOpenPhotos();
+};
+
+const originalOpenLetter = openLetter;
+openLetter = function () {
+    pauseAllVideos();
+    originalOpenLetter();
+};
