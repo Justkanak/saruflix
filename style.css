@@ -821,7 +821,8 @@ LIGHTBOX
     .heroContent{
         left:20px;
         right:20px;
-        bottom:40px;
+        top:140px;
+        bottom:auto;
     }
     
     .heroContent h1{
