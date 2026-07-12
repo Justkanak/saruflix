@@ -750,6 +750,13 @@ LIGHTBOX
     ========================= */
     
     @media(max-width:768px){
+        .hero{
+            height:75vh;
+        }
+        
+        .heroImage{
+            object-position:center top;
+        }
     
     header{
     
@@ -772,25 +779,25 @@ LIGHTBOX
     }
     
     .heroContent{
-    
-    left:25px;
-    
-    right:25px;
-    
-    bottom:40px;
-    
+        left:20px;
+        right:20px;
+        bottom:30px;
     }
     
     .heroContent h1{
-    
-    font-size:40px;
-    
+        font-size:36px;
     }
     
     .heroContent p{
+        font-size:16px;
+    }
     
-    font-size:17px;
+    .heroButtons{
+        flex-direction:column;
+    }
     
+    .heroButtons button{
+        width:100%;
     }
     
     .page{
