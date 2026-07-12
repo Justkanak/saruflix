@@ -32,6 +32,12 @@ const backLetter = document.getElementById("backLetter");
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const closeLightbox = document.getElementById("closeLightbox");
+const prevPhoto = document.getElementById("prevPhoto");
+const nextPhoto = document.getElementById("nextPhoto");
+
+const galleryImages = document.querySelectorAll(".gallery img");
+
+let currentPhoto = 0;
 const typedLetter = document.getElementById("typedLetter");
 const signature = document.getElementById("signature");
 // =========================
@@ -156,17 +162,25 @@ backLetter.addEventListener("click", openHome);
 // PHOTO LIGHTBOX
 // =========================
 
-document.querySelectorAll(".gallery img").forEach(img => {
+galleryImages.forEach((img,index)=>{
 
-    img.addEventListener("click", () => {
+    img.addEventListener("click",()=>{
+
+        currentPhoto=index;
+
+        showPhoto();
 
         lightbox.classList.remove("hidden");
-
-        lightboxImage.src = img.src;
 
     });
 
 });
+
+function showPhoto(){
+
+    lightboxImage.src=galleryImages[currentPhoto].src;
+
+}
 
 closeLightbox.addEventListener("click", () => {
 
@@ -301,3 +315,79 @@ signature.classList.remove("hidden");
 type();
 
 }
+// =========================
+// LIGHTBOX NAVIGATION
+// =========================
+
+prevPhoto.addEventListener("click",()=>{
+
+    currentPhoto--;
+
+    if(currentPhoto<0){
+
+        currentPhoto=galleryImages.length-1;
+
+    }
+
+    showPhoto();
+
+});
+
+nextPhoto.addEventListener("click",()=>{
+
+    currentPhoto++;
+
+    if(currentPhoto>=galleryImages.length){
+
+        currentPhoto=0;
+
+    }
+
+    showPhoto();
+
+});
+
+// Keyboard navigation
+
+document.addEventListener("keydown",(e)=>{
+
+    if(lightbox.classList.contains("hidden")) return;
+
+    if(e.key==="ArrowRight"){
+
+        nextPhoto.click();
+
+    }
+
+    if(e.key==="ArrowLeft"){
+
+        prevPhoto.click();
+
+    }
+
+    if(e.key==="Escape"){
+
+        closeLightbox.click();
+
+    }
+
+});
+// ==============================
+// SECRET PAGE
+// ==============================
+
+const secretHeart = document.getElementById("secretHeart");
+const secretPage = document.getElementById("secretPage");
+const backSecret = document.getElementById("backSecret");
+
+secretHeart.addEventListener("click", () => {
+    document.querySelectorAll(".page").forEach(page => page.classList.add("hidden"));
+    secretPage.classList.remove("hidden");
+    window.scrollTo(0, 0);
+});
+
+backSecret.addEventListener("click", () => {
+    document.querySelectorAll(".page").forEach(page => page.classList.add("hidden"));
+    document.getElementById("homePage").classList.remove("hidden");
+    window.scrollTo(0, 0);
+});

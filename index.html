@@ -20,11 +20,14 @@
 </head>
 
 <body>
-<div id="hearts"></div>
 
-<!-- Background Music -->
-
-<audio id="bgMusic" loop>
+    <!-- LOADER -->
+    
+    <div id="hearts"></div>
+    
+    <!-- Background Music -->
+    
+    <audio id="bgMusic" loop>
 
 <source src="music/song.mp3" type="audio/mpeg">
 
@@ -349,22 +352,82 @@ LOVE LETTER PAGE
     </section>
     <!-- PHOTO LIGHTBOX -->
 
-<div id="lightbox" class="hidden">
+    <div id="lightbox" class="hidden">
 
-    <span id="closeLightbox">&times;</span>
+        <span id="closeLightbox">&times;</span>
     
-    <img id="lightboxImage" src="" alt="">
+        <span id="prevPhoto">&#10094;</span>
+    
+        <img id="lightboxImage" src="" alt="">
+    
+        <span id="nextPhoto">&#10095;</span>
     
     </div>
     
     <footer>
+        <p>Made with ❤️ by Kanak for Saru</p>
     
-    <p>Made with ❤️ by Kanak for Saru</p>
-    
+        <span id="secretHeart">❤️</span>
     </footer>
     
-    <script src="script.js"></script>
-    
+    <!-- =========================
+SECRET PAGE
+========================= -->
+
+<section id="secretPage" class="page hidden">
+
+    <div class="pageTop">
+
+        <button class="backBtn" id="backSecret">
+            ← Back Home
+        </button>
+
+    </div>
+
+    <div class="secretContent">
+
+        <h1>❤️ One Last Surprise ❤️</h1>
+
+        <p>
+
+            If you're reading this...
+
+            it means you explored every part of our little world.
+
+            Thank you for every smile,
+
+            every laugh,
+
+            every memory.
+
+            <br><br>
+
+            Building this website was one of my favorite things because every page reminded me of you.
+
+            <br><br>
+
+            I hope whenever life gets busy,
+
+            you can come back here,
+
+            smile,
+
+            and remember how special you are to me.
+
+            <br><br>
+
+            ❤️ Forever Yours,
+
+            <br>
+
+            <strong>Kanak</strong>
+
+        </p>
+
+    </div>
+
+</section>
+<script src="script.js"></script>
     </body>
     
     </html>
