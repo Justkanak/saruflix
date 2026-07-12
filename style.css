@@ -869,23 +869,11 @@ LIGHTBOX
     font-size:46px;
     
     }
-    .memoryStats{
-        justify-content:center;
-        gap:12px;
-        margin:25px 0;
-    }
-    
-    .statBox{
-        min-width:90px;
-        padding:14px 18px;
-    }
-    
-    .statBox h2{
-        font-size:26px;
-    }
-    
-    .statBox span{
-        font-size:13px;
+    .memoryLine{
+        font-size:16px;
+        text-align:center;
+        margin:20px 0 30px;
+        line-height:1.6;
     }
     }
     #loadingText{
@@ -1232,4 +1220,13 @@ MEMORY STATS
     color:#ddd;
     font-size:15px;
     font-weight:500;
+    .memoryLine{
+        margin:25px 0 35px;
+        font-size:18px;
+        font-weight:600;
+        color:#fff;
+        opacity:.9;
+        letter-spacing:.5px;
+        text-align:center;
+    }
 }
