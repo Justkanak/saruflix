@@ -4,9 +4,11 @@
 
 const intro = document.getElementById("intro");
 const home = document.getElementById("home");
-
+const profilePage = document.getElementById("profilePage");
+const saruProfile = document.getElementById("saruProfile");
 const playButton = document.getElementById("playButton");
 const music = document.getElementById("bgMusic");
+const tadum = document.getElementById("tadum");
 const loadingText=document.getElementById("loadingText");
 
 const photosPage = document.getElementById("photosPage");
@@ -40,12 +42,12 @@ const galleryImages = document.querySelectorAll(".gallery img");
 let currentPhoto = 0;
 const typedLetter = document.getElementById("typedLetter");
 const signature = document.getElementById("signature");
-
+let logoClicks = 0;
+const logoSecret = document.getElementById("logoSecret");
 const secretLogo = document.getElementById("secretLogo");
 const secretPage = document.getElementById("secretPage");
 const backSecret = document.getElementById("backSecret");
 
-let logoClicks = 0;
 let logoTimer;
 
 // ===========================
@@ -100,32 +102,38 @@ function hideAllPages(){
     // =========================
 // PLAY BUTTON
 // =========================
-
-playButton.addEventListener("click",()=>{
+playButton.addEventListener("click", () => {
 
     loadingText.classList.remove("hidden");
-    
-    playButton.style.display="none";
-    
-    setTimeout(()=>{
-    
-    intro.style.display="none";
-    
-    home.classList.remove("hidden");
-    
-    photosPage.classList.add("hidden");
-    
-    videosPage.classList.add("hidden");
-    
-    letterPage.classList.add("hidden");
-    
-    music.volume=.4;
-    
-    music.play().catch(()=>{});
-    
-    },1800);
-    
-    });
+    loadingText.textContent = "Loading memories... ❤️";
+
+    playButton.textContent = "Loading...";
+    playButton.disabled = true;
+    playButton.style.opacity = "0.7";
+
+    document.body.style.transition = "opacity .8s ease";
+
+    setTimeout(() => {
+
+        document.body.style.opacity = "0";
+
+        setTimeout(() => {
+
+            intro.style.display = "none";
+
+            profilePage.classList.remove("hidden");
+            photosPage.classList.add("hidden");
+            videosPage.classList.add("hidden");
+            letterPage.classList.add("hidden");
+
+
+            document.body.style.opacity = "1";
+
+        }, 800);
+
+    }, 1000);
+
+});
 
 // =========================
 // NAVIGATION
@@ -423,4 +431,64 @@ backSecret.addEventListener("click", () => {
     document.querySelectorAll(".page").forEach(page => page.classList.add("hidden"));
     document.getElementById("homePage").classList.remove("hidden");
     window.scrollTo(0, 0);
+});
+logoSecret.addEventListener("click", () => {
+    logoClicks++;
+
+    if (logoClicks === 5) {
+        logoClicks = 0;
+
+        const unlockToast = document.getElementById("unlockToast");
+
+        unlockToast.classList.add("show");
+
+        setTimeout(() => {
+            unlockToast.classList.remove("show");
+
+            document.querySelectorAll(".page").forEach(page =>
+                page.classList.add("hidden")
+            );
+
+            secretPage.classList.remove("hidden");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+
+        }, 1200);
+    }
+
+    setTimeout(() => {
+        if (logoClicks < 5) logoClicks = 0;
+    }, 2500);
+});
+saruProfile.addEventListener("click", () => {
+
+    // Play cinematic intro sound
+    tadum.currentTime = 0;
+    tadum.play().catch(() => {});
+
+    // Fade out
+    document.body.style.transition = "opacity .7s ease";
+    document.body.style.opacity = "0";
+
+    setTimeout(() => {
+
+        profilePage.classList.add("hidden");
+
+        home.classList.remove("hidden");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        // Fade back in
+        document.body.style.opacity = "1";
+
+        // Start background music slightly after the intro sound
+        setTimeout(() => {
+            music.volume = 0.4;
+            music.play().catch(() => {});
+        }, 800);
+
+    }, 700);
+
 });

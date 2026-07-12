@@ -32,6 +32,9 @@
 <source src="music/song.mp3" type="audio/mpeg">
 
 </audio>
+<audio id="tadum">
+    <source src="music/tadum.mp3" type="audio/mpeg">
+</audio>
 
 <!-- INTRO -->
 
@@ -39,11 +42,7 @@
 
 <div class="introContent">
 
-<h1 class="logo">
-
-SARUFLIX
-
-</h1>
+    <h1 class="logo" id="logoSecret">SARUFLIX</h1>
 
 <p class="subtitle">
 
@@ -69,6 +68,25 @@ Made with ❤️ for Saru
 
 <!-- HOME -->
 
+<section id="profilePage" class="hidden">
+
+    <div class="profileScreen">
+
+        <h1 class="profileTitle">Who's Watching?</h1>
+
+        <div class="profileCard" id="saruProfile">
+
+            <div class="profileAvatar">
+                <img src="images/profile.jpg" alt="Saru">
+            </div>
+
+            <p>Saru</p>
+
+        </div>
+
+    </div>
+
+</section>
 <section id="home" class="hidden">
 
 <header>
@@ -425,7 +443,11 @@ SECRET PAGE
     </div>
 
 </section>
+<div id="unlockToast">
+    ❤️ Secret Unlocked...
+</div>
 <script src="script.js"></script>
+
     </body>
     
     </html>

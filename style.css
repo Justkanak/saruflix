@@ -1096,3 +1096,71 @@ right:25px;
 transform:translateY(-50%) scale(1.15);
 
 }
+/* ===== SECRET UNLOCK TOAST ===== */
+
+#unlockToast{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    background: rgba(0,0,0,.9);
+    color: white;
+    padding: 18px 36px;
+    border-radius: 40px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s ease;
+    z-index: 99999;
+    border: 2px solid #e50914;
+    box-shadow: 0 0 35px rgba(229,9,20,.45);
+}
+
+#unlockToast.show{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+/* PROFILE SCREEN */
+
+.profileScreen{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.profileTitle{
+    font-size:52px;
+    margin-bottom:60px;
+}
+
+.profileCard{
+    cursor:pointer;
+    text-align:center;
+    transition:.3s;
+}
+
+.profileCard:hover{
+    transform:scale(1.08);
+}
+
+.profileAvatar{
+    width:220px;
+    height:220px;
+    border-radius:16px;
+    overflow:hidden;
+}
+
+.profileAvatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.profileCard p{
+    margin-top:18px;
+    font-size:30px;
+    font-weight:600;
+}
