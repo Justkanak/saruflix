@@ -786,15 +786,17 @@ LIGHTBOX
     .heroContent{
         left:20px;
         right:20px;
-        bottom:30px;
+        bottom:40px;
     }
     
     .heroContent h1{
-        font-size:36px;
+        font-size:52px;
+        line-height:0.95;
     }
     
     .heroContent p{
-        font-size:16px;
+        font-size:17px;
+        max-width:100%;
     }
     
     .heroButtons{
