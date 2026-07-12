@@ -755,8 +755,8 @@ LIGHTBOX
         }
         
         .heroImage{
-            object-fit:cover;
-            object-position:50% 20%;
+            object-fit: cover;
+            object-position: center 65%;
         }
     
     header{
