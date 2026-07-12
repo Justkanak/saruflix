@@ -5,419 +5,329 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SARUFLIX ❤️</title>
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-    <body>
 
-        <!-- ========================= -->
-        <!-- INTRO -->
-        <!-- ========================= -->
-        
-        <section id="intro">
-        
-            <div class="intro-content">
-        
-                <h1 id="logo">
-                    SARUFLIX
-                </h1>
-        
-                <p>
-                    Every love story deserves its own screen.
-                </p>
-        
-            </div>
-        
-        </section>
-        
-        <!-- ========================= -->
-        <!-- MOVIE TICKET -->
-        <!-- ========================= -->
-        
-        <section id="ticketSection" class="hidden">
-        
-            <div class="ticket">
-        
-                <h2>SARUFLIX</h2>
-        
-                <div class="line"></div>
-        
-                <p>Admission Pass</p>
-        
-                <h3>❤️ Saru</h3>
-        
-                <p>Seat</p>
-        
-                <h4>Front Row</h4>
-        
-                <p>Valid For</p>
-        
-                <h4>Unlimited Memories ❤️</h4>
-        
-            </div>
-        
-        </section>
-        
-        <!-- ========================= -->
-        <!-- PROFILE -->
-        <!-- ========================= -->
-        
-        <section id="profileSection" class="hidden">
-        
-            <h1>Who's Watching?</h1>
-        
-            <div class="profileCard" id="enterProfile">
-        
-                <img src="images/profile.jpg" alt="Profile">
-        
-                <h2>❤️ Saru</h2>
-        
-            </div>
-        
-        </section>
-        
-        <!-- ========================= -->
-        <!-- HOME -->
-        <!-- ========================= -->
-        
-        <section id="home" class="hidden">
-        
-        <nav>
-        
-        <div class="navLogo">
-        SARUFLIX
-        </div>
-        
-        <ul>
-        
-        <li><a href="#" id="navHome">Home</a></li>
-        
-        <li><a href="#" id="navPhotos">Photos</a></li>
-        
-        <li><a href="#" id="navVideos">Videos</a></li>
-        
-        <li><a href="#" id="navLetter">Letter</a></li>
-        
-        </ul>
-        
-        </nav>
-        
-        <header class="hero">
-        
-        <div class="overlay">
-        
-        <span class="badge">
-        
-        NOW STREAMING
-        
-        </span>
-        
-        <h1>
-        
-        The Best Thing That Ever Happened To Me ❤️
-        
-        </h1>
-        
-        <p>
-        
-        Every smile.
-        Every photo.
-        Every laugh.
-        
-        They became my favourite story.
-        
-        </p>
-        
-        <div class="heroButtons">
-        
-        <button id="playBtn">
-        
-        ▶ Play Memories
-        
-        </button>
-        
-        <button id="letterBtn">
-        
-        💌 Open Letter
-        
-        </button>
-        
-        </div>
-        
-        </div>
-        
-        </header>
-        <!-- ========================= -->
-<!-- CONTINUE WATCHING -->
-<!-- ========================= -->
+<!-- Background Music -->
 
-<section class="continueWatching">
+<audio id="bgMusic" loop>
 
-    <h2>Continue Watching</h2>
+<source src="music/song.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- INTRO -->
+
+<section id="intro">
+
+<div class="introContent">
+
+<h1 class="logo">
+
+SARUFLIX
+
+</h1>
+
+<p class="subtitle">
+
+Made with ❤️ for Saru
+
+</p>
+
+<button id="playButton">
+
+▶ PLAY
+
+</button>
+
+</div>
+
+</section>
+
+<!-- HOME -->
+
+<section id="home" class="hidden">
+
+<header>
+
+<div class="brand">
+
+SARUFLIX
+
+</div>
+
+<nav>
+
+<a href="#" id="navHome">Home</a>
+
+<a href="#" id="navPhotos">Photos</a>
+
+<a href="#" id="navVideos">Videos</a>
+
+<a href="#" id="navLetter">Letter</a>
+
+</nav>
+
+</header>
+<!-- HERO -->
+
+<div class="hero">
+
+<img src="images/hero.jpg" alt="Hero Image" class="heroImage">
+
+<div class="heroOverlay"></div>
+
+<div class="heroContent">
+
+<span class="badge">
+❤️ A Story Made for Saru
+</span>
+
+<h1>
+Every Memory Deserves<br>
+Its Own Place.
+</h1>
+
+<p>
+From our happiest moments to the smallest smiles,
+this little corner of the internet is dedicated only to you.
+</p>
+
+<div class="heroButtons">
+
+<button id="watchBtn">
+▶ Watch Memories
+</button>
+
+<button id="letterBtn">
+💌 Read Letter
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FEATURED -->
+
+<section class="featured">
+
+<h2>
+Featured Collections
+</h2>
+
+<div class="cards">
+
+<div class="card" id="photosCard">
+
+<img src="images/photo1.jpg" alt="Photos">
+
+<div class="cardOverlay">
+
+<h3>Photos</h3>
+
+<p>11 Beautiful Memories</p>
+
+</div>
+
+</div>
+
+<div class="card" id="videosCard">
+
+<img src="images/photo2.jpg" alt="Videos">
+
+<div class="cardOverlay">
+
+<h3>Videos</h3>
+
+<p>17 Precious Moments</p>
+
+</div>
+
+</div>
+
+<div class="card" id="letterCard">
+
+<img src="images/photo3.jpg" alt="Letter">
+
+<div class="cardOverlay">
+
+<h3>Love Letter</h3>
+
+<p>Written from my heart ❤️</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</section>
+    <!-- =========================
+PHOTOS PAGE
+========================= -->
+
+<section id="photosPage" class="page hidden">
+
+    <div class="pageTop">
     
-    <div class="cardRow">
+    <h1>📸 Our Memories</h1>
     
-    <div class="movieCard" id="photosCard">
+    <button class="backBtn" id="backPhotos">
+    
+    ← Back Home
+    
+    </button>
+    
+    </div>
+    
+    <div class="gallery">
     
     <img src="images/photo1.jpg" alt="">
-    
-    <div class="cardInfo">
-    
-    <h3>📸 Captured Smiles</h3>
-    
-    <p>11 Memories</p>
-    
-    </div>
-    
-    </div>
-    
-    <div class="movieCard" id="videosCard">
-    
     <img src="images/photo2.jpg" alt="">
-    
-    <div class="cardInfo">
-    
-    <h3>🎥 Our Little Moments</h3>
-    
-    <p>17 Videos</p>
-    
-    </div>
-    
-    </div>
-    
-    <div class="movieCard" id="letterCard">
-    
     <img src="images/photo3.jpg" alt="">
-    
-    <div class="cardInfo">
-    
-    <h3>💌 Love Letter</h3>
-    
-    <p>Forever ❤️</p>
-    
-    </div>
-    
-    </div>
+    <img src="images/photo4.jpg" alt="">
+    <img src="images/photo5.jpg" alt="">
+    <img src="images/photo6.jpg" alt="">
+    <img src="images/photo7.jpg" alt="">
+    <img src="images/photo8.jpg" alt="">
+    <img src="images/photo9.jpg" alt="">
+    <img src="images/photo10.jpg" alt="">
+    <img src="images/photo11.jpg" alt="">
     
     </div>
     
     </section>
+    <!-- =========================
+VIDEOS PAGE
+========================= -->
+
+<section id="videosPage" class="page hidden">
+
+    <div class="pageTop">
     
-    <!-- ========================= -->
-    <!-- FEATURED -->
-    <!-- ========================= -->
+    <h1>🎥 Our Moments</h1>
     
-    <section class="featuredMemory">
+    <button class="backBtn" id="backVideos">
     
-    <div class="featuredContainer">
+    ← Back Home
     
-    <img src="images/hero.jpg" alt="">
+    </button>
     
-    <div class="featuredText">
+    </div>
     
-    <h1>The Best Chapter ❤️</h1>
+    <div class="videoGrid">
+    
+    <video controls><source src="videos/video1.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video2.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video3.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video4.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video5.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video6.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video7.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video8.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video9.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video10.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video11.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video12.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video13.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video14.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video15.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video16.mp4" type="video/mp4"></video>
+    <video controls><source src="videos/video17.mp4" type="video/mp4"></video>
+    
+    </div>
+    
+    </section>
+    <!-- =========================
+LOVE LETTER PAGE
+========================= -->
+
+<section id="letterPage" class="page hidden">
+
+    <div class="pageTop">
+    
+    <h1>💌 A Letter For You</h1>
+    
+    <button class="backBtn" id="backLetter">
+    
+    ← Back Home
+    
+    </button>
+    
+    </div>
+    
+    <div class="letterPaper">
+    
+    <h2>My Dearest Saru ❤️</h2>
     
     <p>
     
-    Some moments never fade.
+    If you're reading this, it means you've reached the most special part of this little website.
     
-    Some people become home.
+    I wanted to create something that wasn't just another gift—but a place where our memories could live forever.
+    
+    Every photo here reminds me of your smile.
+    
+    Every video reminds me of the moments we laughed together.
+    
+    And every second spent making this was worth it if it brings even one smile to your face.
     
     </p>
     
-    <button id="watchNow">
+    <p>
     
-    ▶ Watch Now
+    No matter where life takes us, I hope whenever you open SARUFLIX, it reminds you how special you are to me.
     
-    </button>
+    Thank you for being part of my life.
     
-    </div>
+    </p>
     
-    </div>
+    <p class="signature">
     
-    </section>
+    Forever Yours,<br>
     
-    <!-- ========================= -->
-    <!-- STATS -->
-    <!-- ========================= -->
+    ❤️ Kanak
     
-    <section class="stats">
-    
-    <div class="stat">
-    
-    <h1>11</h1>
-    
-    <p>Photos</p>
-    
-    </div>
-    
-    <div class="stat">
-    
-    <h1>17</h1>
-    
-    <p>Videos</p>
-    
-    </div>
-    
-    <div class="stat">
-    
-    <h1>∞</h1>
-    
-    <p>Memories</p>
+    </p>
     
     </div>
     
     </section>
-     <!-- ========================= -->
-<!-- PHOTOS PAGE -->
-<!-- ========================= -->
-
-<section id="photosPage" class="contentPage hidden">
-
-    <button class="backBtn" id="backFromPhotos">
-    ← Back to Home
-    </button>
-    
-    <h1>📸 Captured Smiles</h1>
-    
-    <div id="photoGallery" class="galleryGrid">
-    
-    <!-- Photos generated automatically -->
-    
-    </div>
-    
-    </section>
-    
-    <!-- ========================= -->
-    <!-- VIDEOS PAGE -->
-    <!-- ========================= -->
-    
-    <section id="videosPage" class="contentPage hidden">
-    
-    <button class="backBtn" id="backFromVideos">
-    ← Back to Home
-    </button>
-    
-    <h1>🎥 Our Little Moments</h1>
-    
-    <div id="videoGallery" class="videoGrid">
-    
-    <!-- Videos generated automatically -->
-    
-    </div>
-    
-    </section>
-    
-    <!-- ========================= -->
     <!-- PHOTO LIGHTBOX -->
-    <!-- ========================= -->
-    
-    <div id="lightbox" class="hidden">
-    
-    <span id="closeLightbox">&times;</span>
-    
-    <img id="lightboxImage" src="" alt="">
-    
-    </div>
-    <!-- ========================= -->
-<!-- FOOTER -->
-<!-- ========================= -->
-
-<footer>
-
-    <h2>SARUFLIX ❤️</h2>
-
-    <p>
-        Made with ❤️ by Kanak
-    </p>
-
-</footer>
-
-</section>
-
-<!-- ========================= -->
-<!-- LOVE LETTER PAGE -->
-<!-- ========================= -->
-
-<section id="letterPage" class="contentPage hidden">
-
-    <button class="backBtn" id="backFromLetter">
-        ← Back to Home
-    </button>
-
-    <div class="letterBox">
-
-        <h1>💌 To My Favourite Person</h1>
-
-        <p>
-
-            My Dearest Saru,
-
-            <br><br>
-
-            Every memory with you has become my favourite chapter.
-
-            Every photo reminds me of your smile.
-
-            Every video reminds me of our laughter.
-
-            Every second with you became something I never want to forget.
-
-            <br><br>
-
-            This website isn't made with just HTML, CSS and JavaScript.
-
-            It's made with every little memory we've created together.
-
-            <br><br>
-
-            Thank you for being the best part of my story.
-
-            <br><br>
-
-            ❤️ Forever Yours,
-
-            <br>
-
-            Kanak
-
-        </p>
-
-    </div>
-
-</section>
-
-<!-- ========================= -->
-<!-- PHOTO LIGHTBOX -->
-<!-- ========================= -->
 
 <div id="lightbox" class="hidden">
 
     <span id="closeLightbox">&times;</span>
-
+    
     <img id="lightboxImage" src="" alt="">
-
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+    
+    </div>
+    
+    <footer>
+    
+    <p>Made with ❤️ by Kanak for Saru</p>
+    
+    </footer>
+    
+    <script src="script.js"></script>
+    
+    </body>
+    
+    </html>
