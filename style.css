@@ -746,6 +746,28 @@ LIGHTBOX
     color:#aaa;
     
     }
+    /* ==========================
+   SECRET PAGE
+========================== */
+
+.secretContent{
+    max-width: 900px;
+    width: 90%;
+    margin: 80px auto;
+    text-align: left;
+}
+
+.secretContent h1{
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.secretContent p{
+    font-size: 1.35rem;
+    line-height: 1.9;
+    color: #ddd;
+}
     
     /* =========================
     MOBILE

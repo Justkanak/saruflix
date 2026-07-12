@@ -40,9 +40,17 @@ const galleryImages = document.querySelectorAll(".gallery img");
 let currentPhoto = 0;
 const typedLetter = document.getElementById("typedLetter");
 const signature = document.getElementById("signature");
-// =========================
+
+const secretLogo = document.getElementById("secretLogo");
+const secretPage = document.getElementById("secretPage");
+const backSecret = document.getElementById("backSecret");
+
+let logoClicks = 0;
+let logoTimer;
+
+// ===========================
 // FUNCTIONS
-// =========================
+// ===========================
 
 function hideAllPages(){
 
@@ -376,14 +384,39 @@ document.addEventListener("keydown",(e)=>{
 // SECRET PAGE
 // ==============================
 
-const secretHeart = document.getElementById("secretHeart");
-const secretPage = document.getElementById("secretPage");
-const backSecret = document.getElementById("backSecret");
+// =========================
+// SECRET LOGO
+// =========================
 
-secretHeart.addEventListener("click", () => {
-    document.querySelectorAll(".page").forEach(page => page.classList.add("hidden"));
-    secretPage.classList.remove("hidden");
+backSecret.addEventListener("click", () => {
+    hideAllPages();
+    home.classList.remove("hidden");
     window.scrollTo(0, 0);
+});
+
+secretLogo.addEventListener("click", () => {
+
+    logoClicks++;
+
+    clearTimeout(logoTimer);
+
+    logoTimer = setTimeout(() => {
+        logoClicks = 0;
+    }, 3000);
+
+    if (logoClicks === 5) {
+
+        logoClicks = 0;
+
+        hideAllPages();
+        secretPage.classList.remove("hidden");
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
 });
 
 backSecret.addEventListener("click", () => {
