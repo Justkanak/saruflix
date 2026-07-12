@@ -756,13 +756,12 @@ LIGHTBOX
         }
     
         .heroImage{
-            content:url("images/hero-mobile.jpg");
+            content: url("images/hero-mobile.jpg");
             width:100%;
             height:100%;
             object-fit:cover;
+            object-position:center;
         }
-    
-    }
     
     header{
     
