@@ -7,6 +7,7 @@ const home = document.getElementById("home");
 
 const playButton = document.getElementById("playButton");
 const music = document.getElementById("bgMusic");
+const loadingText=document.getElementById("loadingText");
 
 const photosPage = document.getElementById("photosPage");
 const videosPage = document.getElementById("videosPage");
@@ -31,6 +32,8 @@ const backLetter = document.getElementById("backLetter");
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const closeLightbox = document.getElementById("closeLightbox");
+const typedLetter = document.getElementById("typedLetter");
+const signature = document.getElementById("signature");
 // =========================
 // FUNCTIONS
 // =========================
@@ -72,33 +75,43 @@ function hideAllPages(){
     }
     
     function openLetter(){
-    
-    hideAllPages();
-    
-    letterPage.classList.remove("hidden");
-    
-    }
+
+        hideAllPages();
+        
+        letterPage.classList.remove("hidden");
+        
+        startTyping();
+        
+        }
     // =========================
 // PLAY BUTTON
 // =========================
 
-playButton.addEventListener("click", () => {
+playButton.addEventListener("click",()=>{
 
-    intro.style.display = "none";
-
+    loadingText.classList.remove("hidden");
+    
+    playButton.style.display="none";
+    
+    setTimeout(()=>{
+    
+    intro.style.display="none";
+    
     home.classList.remove("hidden");
-
+    
     photosPage.classList.add("hidden");
-
+    
     videosPage.classList.add("hidden");
-
+    
     letterPage.classList.add("hidden");
-
-    music.volume = 0.4;
-
-    music.play().catch(() => {});
-
-});
+    
+    music.volume=.4;
+    
+    music.play().catch(()=>{});
+    
+    },1800);
+    
+    });
 
 // =========================
 // NAVIGATION
@@ -194,3 +207,97 @@ navPhotos.addEventListener("click", pauseVideos);
 navLetter.addEventListener("click", pauseVideos);
 
 console.log("❤️ SARUFLIX Loaded Successfully ❤️");
+// =========================
+// FLOATING HEARTS
+// =========================
+
+const hearts = document.getElementById("hearts");
+
+setInterval(() => {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML = "❤";
+
+    heart.style.left = `${Math.random() * window.innerWidth}px`;
+
+    heart.style.fontSize = (18 + Math.random()*20) + "px";
+
+    heart.style.animationDuration = (6 + Math.random()*6) + "s";
+
+    hearts.appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },12000);
+
+},900);
+// =========================
+// TYPEWRITER LETTER
+// =========================
+
+const letterText = `
+
+If you're reading this,
+
+it means you've reached the most special part of this little website.
+
+I wanted to create something that wasn't just another gift...
+
+but a place where our memories could live forever.
+
+Every photo reminds me of your smile.
+
+Every video reminds me of the beautiful moments we shared.
+
+And every second spent making this website was worth it,
+
+if it brings even one smile to your face.
+
+No matter where life takes us,
+
+I hope whenever you open SARUFLIX,
+
+you remember how special you are to me.
+
+I love you ❤️
+
+`;
+
+let typingStarted = false;
+
+function startTyping(){
+
+if(typingStarted) return;
+
+typingStarted = true;
+
+let i = 0;
+
+typedLetter.innerHTML = "";
+
+function type(){
+
+if(i < letterText.length){
+
+typedLetter.innerHTML += letterText.charAt(i);
+
+i++;
+
+setTimeout(type,35);
+
+}else{
+
+signature.classList.remove("hidden");
+
+}
+
+}
+
+type();
+
+}
