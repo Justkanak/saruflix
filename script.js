@@ -492,3 +492,32 @@ saruProfile.addEventListener("click", () => {
     }, 700);
 
 });
+// =========================
+// VIDEO & MUSIC CONTROL
+// =========================
+
+document.querySelectorAll(".videoGrid video").forEach(video => {
+
+    video.addEventListener("play", () => {
+
+        music.pause();
+
+    });
+
+    video.addEventListener("ended", () => {
+
+        music.play().catch(() => {});
+
+    });
+
+    video.addEventListener("pause", () => {
+
+        if (video.currentTime < video.duration) {
+
+            music.play().catch(() => {});
+
+        }
+
+    });
+
+});
