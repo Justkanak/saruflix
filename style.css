@@ -774,6 +774,20 @@ LIGHTBOX
     ========================= */
     
     @media (max-width:768px){
+        .profileTitle{
+            font-size:34px;
+            text-align:center;
+            margin-bottom:40px;
+        }
+        
+        .profileAvatar{
+            width:150px;
+            height:150px;
+        }
+        
+        .profileCard p{
+            font-size:24px;
+        }
 
         .hero{
             height:100vh;
